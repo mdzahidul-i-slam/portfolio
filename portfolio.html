@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio — Md Zahidul Islam</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="index.html" class="logo" aria-label="Md Zahidul Islam — Home">
+      <span class="logo-dot"></span>
+    </a>
+    <nav class="main-nav" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="portfolio.html" class="active">Portfolio</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <a href="contact.html" class="btn btn-primary btn-small">Hire Me</a>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="container">
+    <h1>Portfolio</h1>
+  </div>
+</section>
+
+<div class="portfolio-grid">
+  <div class="portfolio-item">Project 1<br>— replace with image + title</div>
+  <div class="portfolio-item">Project 2<br>— replace with image + title</div>
+  <div class="portfolio-item">Project 3<br>— replace with image + title</div>
+  <div class="portfolio-item">Project 4<br>— replace with image + title</div>
+  <div class="portfolio-item">Project 5<br>— replace with image + title</div>
+  <div class="portfolio-item">Project 6<br>— replace with image + title</div>
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>&copy; <span id="year"></span> Md Zahidul Islam. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
