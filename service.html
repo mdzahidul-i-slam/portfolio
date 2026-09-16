@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services — Md Zahidul Islam</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <style>
+    :root {
+      --primary-color: #2563eb;
+      --dark-bg: #0f172a;
+      --card-bg: #1e293b;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --border-color: #334155;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--dark-bg);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Navigation Bar */
+    .navbar {
+      background-color: rgba(15, 23, 42, 0.9);
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid var(--border-color);
+      padding: 20px 0;
+    }
+
+    .navbar .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-main);
+      text-decoration: none;
+    }
+
+    nav {
+      display: flex;
+      gap: 25px;
+    }
+
+    nav a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover, nav a.active {
+      color: var(--primary-color);
+    }
+
+    /* Page Header */
+    .page-header {
+      padding: 80px 0 40px;
+      text-align: center;
+    }
+
+    .page-header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+    }
+
+    .page-header p {
+      color: var(--text-muted);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Services Grid */
+    .services-section {
+      padding: 40px 0 80px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+    }
+
+    .service-card {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 30px;
+      transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--primary-color);
+    }
+
+    .icon-box {
+      width: 50px;
+      height: 50px;
+      background-color: rgba(37, 99, 235, 0.1);
+      color: var(--primary-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+    }
+
+    .service-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 12px;
+    }
+
+    .service-card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 20px;
+    }
+
+    .service-features {
+      list-style: none;
+    }
+
+    .service-features li {
+      color: var(--text-main);
+      font-size: 0.9rem;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .service-features i {
+      color: var(--primary-color);
+    }
+
+    /* Working Process */
+    .process-section {
+      padding: 80px 0;
+      border-top: 1px solid var(--border-color);
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-title h2 {
+      font-size: 2rem;
+    }
+
+    .section-title p {
+      color: var(--text-muted);
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .process-step {
+      background-color: var(--card-bg);
+      padding: 25px;
+      border-radius: 10px;
+      border: 1px solid var(--border-color);
+    }
+
+    .process-step span {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--primary-color);
+      opacity: 0.6;
+    }
+
+    .process-step h3 {
+      margin: 10px 0;
+    }
+
+    .process-step p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    /* CTA Section */
+    .cta-section {
+      text-align: center;
+      padding: 80px 20px;
+      background-color: var(--card-bg);
+      margin: 40px auto 80px;
+      border-radius: 16px;
+      max-width: 1200px;
+      border: 1px solid var(--border-color);
+    }
+
+    .btn-primary {
+      display: inline-block;
+      background-color: var(--primary-color);
+      color: #fff;
+      padding: 12px 28px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      margin-top: 15px;
+      transition: background 0.3s ease;
+    }
+
+    .btn-primary:hover {
+      background-color: #1d4ed8;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border-color);
+      padding: 30px 0;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="container">
+      <a href="index.html" class="logo">Md Zahidul Islam</a>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="service.html" class="active">Service</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <a href="contact.html" class="btn-primary" style="margin-top: 0;">Hire Me</a>
+    </div>
+  </header>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <h1>My Creative Services</h1>
+      <p>I deliver high-impact visual design solutions tailored to help your brand grow and stand out in the market.</p>
+    </div>
+  </section>
+
+  <!-- Services Grid Section -->
+  <section class="services-section">
+    <div class="container">
+      <div class="services-grid">
+        
+        <!-- Service 1 -->
+        <div class="service-card">
+          <div class="icon-box"><i class="fa-solid fa-palette"></i></div>
+          <h3>Brand Identity & Logo Design</h3>
+          <p>Complete branding packages including logo creation, brand guidelines, color palettes, and brand voice definition.</p>
+          <ul class="service-features">
+            <li><i class="fa-solid fa-check"></i> Minimalist Logo Design</li>
+            <li><i class="fa-solid fa-check"></i> Brand Style Guide</li>
+            <li><i class="fa-solid fa-check"></i> Typography & Color System</li>
+          </ul>
+        </div>
+
+        <!-- Service 2 -->
+        <div class="service-card">
+          <div class="icon-box"><i class="fa-solid fa-pen-ruler"></i></div>
+          <h3>UI/UX Design</h3>
+          <p>User-centered digital interfaces for websites and mobile apps with clean, functional, and modern aesthetic.</p>
+          <ul class="service-features">
+            <li><i class="fa-solid fa-check"></i> Wireframing & Prototyping</li>
+            <li><i class="fa-solid fa-check"></i> Mobile App & Web UI</li>
+            <li><i class="fa-solid fa-check"></i> Interactive Figma Design</li>
+          </ul>
+        </div>
+
+        <!-- Service 3 -->
+        <div class="service-card">
+          <div class="icon-box"><i class="fa-solid fa-box-open"></i></div>
+          <h3>Packaging & Label Design</h3>
+          <p>Eye-catching, print-ready product packaging designs that attract customers and elevate product presence.</p>
+          <ul class="service-features">
+            <li><i class="fa-solid fa-check"></i> Dieline & Print-Ready Files</li>
+            <li><i class="fa-solid fa-check"></i> 3D Product Mockups</li>
+            <li><i class="fa-solid fa-check"></i> Eco & Sustainable Design</li>
+          </ul>
+        </div>
+
+        <!-- Service 4 -->
+        <div class="service-card">
+          <div class="icon-box"><i class="fa-solid fa-hashtag"></i></div>
+          <h3>Social Media Graphics</h3>
+          <p>High-converting social media posts, promotional banners, ad creatives, and cover photos for all platforms.</p>
+          <ul class="service-features">
+            <li><i class="fa-solid fa-check"></i> Facebook & Instagram Ads</li>
+            <li><i class="fa-solid fa-check"></i> Custom Post Templates</li>
+            <li><i class="fa-solid fa-check"></i> YouTube Thumbnails & Banners</li>
+          </ul>
+        </div>
+
+        <!-- Service 5 -->
+        <div class="service-card">
+          <div class="icon-box"><i class="fa-solid fa-print"></i></div>
+          <h3>Print & Marketing Materials</h3>
+          <p>Professional business cards, flyers, brochures, posters, and billboard designs tailored for offline promotion.</p>
+          <ul class="service-features">
+            <li><i class="fa-solid fa-check"></i> Business Cards & Letterheads</li>
+            <li><i class="fa-solid fa-check"></i> Corporate Brochures</li>
+            <li><i class="fa-solid fa-check"></i> Event Posters & Flyers</li>
+          </ul>
+        </div>
+
+        <!-- Service 6 -->
+        <div class="service-card">
+          <div class="icon-box"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+          <h3>Custom Design Solutions</h3>
+          <p>Tailored graphic design solutions suited specifically for your unique project needs and goals.</p>
+          <ul class="service-features">
+            <li><i class="fa-solid fa-check"></i> Vector Tracing & Editing</li>
+            <li><i class="fa-solid fa-check"></i> Image Photo Manipulation</li>
+            <li><i class="fa-solid fa-check"></i> Pitch Deck Design</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Working Process Section -->
+  <section class="process-section">
+    <div class="container">
+      <div class="section-title">
+        <h2>How I Work</h2>
+        <p>A simple and transparent design process from concept to final delivery.</p>
+      </div>
+      <div class="process-grid">
+        <div class="process-step">
+          <span>01</span>
+          <h3>Discovery</h3>
+          <p>Understanding your business, target audience, and project goals through detailed discussion.</p>
+        </div>
+        <div class="process-step">
+          <span>02</span>
+          <h3>Concept</h3>
+          <p>Brainstorming, moodboarding, and creating initial design concepts and layouts.</p>
+        </div>
+        <div class="process-step">
+          <span>03</span>
+          <h3>Refinement</h3>
+          <p>Polishing the designs based on your feedback to reach the perfect final product.</p>
+        </div>
+        <div class="process-step">
+          <span>04</span>
+          <h3>Delivery</h3>
+          <p>Providing all final print-ready and digital source files ready for launch.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <h2>Have a Project in Mind?</h2>
+    <p>Let's collaborate and build something remarkable together.</p>
+    <a href="contact.html" class="btn-primary">Start a Project</a>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 Md Zahidul Islam. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
